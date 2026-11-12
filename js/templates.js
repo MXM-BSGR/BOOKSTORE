@@ -2,19 +2,25 @@
 // TEMPLATE FUNCTIONS
 // ==============================================================
 
-function bookCardTemplate() {
+function bookCardTemplate(i, bookName, likesCount, price) {
     return `
-                <article id="idBook1" class="Book">
-                <header id="idHeaderBook1" class="HeaderBook">
-                    <h2 id="idTitleOfBook1" class="TitleOfBook1">Title</h2>
-                    <button id="idLikeButtonForBook1" class="LikeButtonForBook">
-                        <img src="./assets/icons/like.svg">
-                    </button>
+                <article id="idBook${i + 1}" class="Book">
+                <header id="idHeaderBook${i + 1}" class="HeaderBook">
+                    <h2 id="idTitleOfBook${i + 1}" class="TitleOfBook">${bookName}</h2>
+        <div id="idLikesAreaWrapper" class="LikesAreaWrapper">
+            <p id="idLikesCounterBook${i + 1}" class="LikesCounter">${likesCount}</p>
+            <button id="idLikeButtonForBook${i + 1}" class="LikeButtonForBook">
+                <img  class="Like" src="./assets/icons/like.svg">
+                <img  class="Hover_Add_Like" src="./assets/icons/heart-plus.svg">
+                <img  class="Liked" src="./assets/icons/heart-checked.svg">
+                <img  class="Hover_Remove_Like" src="./assets/icons/heart-minus.svg">
+            </button>
+        </div>
                 </header>
                 <figure id="idBookCover" class="CoverArea">
-                    <img id="idBookCover1" class="BookCover" src="./assets/icons/book.svg">
+                    <img id="idBookCover${i + 1}" class="BookCover" src="./assets/icons/book.svg">
                 </figure>
-                <p id="idPriceBook1" class="Price">19.99€</p>
+                <p id="idPriceBook${i + 1}" class="Price">${price}</p>
                 <section id="idCommentsWrapper" class="CommentsWrapper">
                     <p>Kommentare:</p>
                     <form id="idCommentInputArea" class="CommentInputArea">
