@@ -74,15 +74,50 @@
         height: fit-content;
     }
 
+    .LikesAreaWrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     .LikeButtonForBook {
         all: unset;
 
     }
 
-    .LikeButtonForBook img {
+    .Like {
         cursor: pointer;
 
     }
+
+    /* .Like:hover {
+        display: none;
+    } */
+
+    .Hover_Add_Like {
+        cursor: pointer;
+        display: none;
+
+    }
+
+    .Hover_Add_Like:hover {
+        cursor: pointer;
+        display: flex;
+
+    }
+
+    .Liked {
+        cursor: pointer;
+        display: none;
+
+    }
+
+    .Hover_Remove_Like {
+        cursor: pointer;
+        display: none;
+
+    }
+
 
     .CoverArea {
         display: flex;
