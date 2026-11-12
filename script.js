@@ -5,6 +5,7 @@
 
 
 /* #region   CONST  */
+const BOOKS_WRAPPER_REF = document.getElementById("idBooksWrapper");
 
 /* #endregion */
 /* ------------------------------------------------------------- */
@@ -20,11 +21,18 @@
 
 /* #region   FUNCTIONS  */
 
-
-
-
 /* #region   GENERAL FUNCTIONS  */
+function init() {
+    renderBooks();
+}
 
+function renderBooks() {
+    BOOKS_WRAPPER_REF.innerHTML = "";
+
+    for (let i = 0; i < books.length; i++) {
+        BOOKS_WRAPPER_REF.innerHTML += bookCardTemplate();
+    }
+}
 
 /* #endregion */
 /* ------------------------------------------------------------- */
