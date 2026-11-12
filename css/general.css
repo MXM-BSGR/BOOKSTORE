@@ -5,13 +5,15 @@
     * {
         margin: 0;
         box-sizing: border-box;
+
     }
 
-    /* 
+
     html {
+        color: rgb(255, 238, 206);
         font-size: 16px;
         min-height: 100%;
-    } */
+    }
 
 
     /* #region     */
