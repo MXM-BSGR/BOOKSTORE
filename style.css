@@ -85,7 +85,18 @@
 
     }
 
+    .hide {
+        all: unset;
+        display: none;
+    }
+
+    .show {
+        all: unset;
+        display: block;
+    }
+
     .Like {
+        all: unset;
         cursor: pointer;
 
     }
@@ -108,7 +119,7 @@
 
     .Liked {
         cursor: pointer;
-        display: none;
+
 
     }
 

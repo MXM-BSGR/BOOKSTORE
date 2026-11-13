@@ -2,25 +2,19 @@
 // TEMPLATE FUNCTIONS
 // ==============================================================
 
-function bookCardTemplate(i, bookName, likesCount, price) {
+function bookCardTemplate(i, bookName, price) {
     return `
-                <article id="idBook${i + 1}" class="Book">
-                <header id="idHeaderBook${i + 1}" class="HeaderBook">
-                    <h2 id="idTitleOfBook${i + 1}" class="TitleOfBook">${bookName}</h2>
-        <div id="idLikesAreaWrapper" class="LikesAreaWrapper">
-            <p id="idLikesCounterBook${i + 1}" class="LikesCounter">${likesCount}</p>
-            <button id="idLikeButtonForBook${i + 1}" class="LikeButtonForBook">
-                <img  class="Like" src="./assets/icons/like.svg">
-                <img  class="Hover_Add_Like" src="./assets/icons/heart-plus.svg">
-                <img  class="Liked" src="./assets/icons/heart-checked.svg">
-                <img  class="Hover_Remove_Like" src="./assets/icons/heart-minus.svg">
-            </button>
+                <article id="idBook${i}" class="Book">
+                <header id="idHeaderBook${i}" class="HeaderBook">
+                    <h2 id="idTitleOfBook${i}" class="TitleOfBook">${bookName}</h2>
+        <div id="idLikesAreaWrapper${i}" class="LikesAreaWrapper">
+            
         </div>
                 </header>
                 <figure id="idBookCover" class="CoverArea">
-                    <img id="idBookCover${i + 1}" class="BookCover" src="./assets/icons/book.svg">
+                    <img id="idBookCover${i}" class="BookCover" src="./assets/icons/book.svg">
                 </figure>
-                <p id="idPriceBook${i + 1}" class="Price">${price} €</p>
+                <p id="idPriceBook${i}" class="Price">${price} €</p>
                 <section id="idCommentsWrapper" class="CommentsWrapper">
                     <p>Kommentare:</p>
                     <form id="idCommentInputArea" class="CommentInputArea">
@@ -34,7 +28,7 @@ function bookCardTemplate(i, bookName, likesCount, price) {
                         </div>
                         <button id="idAddCommentButton" class="AddCommentButton" type="button">ADD</button>
                     </form>
-                    <ul id="idCommentsBook${i + 1}" class="Comments">
+                    <ul id="idCommentsBook${i}" class="Comments">
                     </ul>
                 </section>
             </article>
@@ -43,8 +37,19 @@ function bookCardTemplate(i, bookName, likesCount, price) {
 
 function getCommentsTemplate(i, userName, comment) {
     return `
-    <li id="idComment${i + 1}" class="Comment">${userName}:<br>
+    <li id="idComment${i}" class="Comment">${userName}:<br>
     ${comment}</li>
+    `
+}
+function getLikesAreaWrapperTemplate(i, likesCount) {
+    return `
+            <p id="idLikesCounterBook${i}" class="LikesCounter">${likesCount}</p>
+            <button id="idLikeButtonForBook${i}" class="LikeButtonForBook" onclick="updateLikes(${i}), renderLikes(${i}), changeLikeButton(${i})" data-status="unliked">
+                <img id="idUnlikedHeart(${i})"  class="Like" src="./assets/icons/like.svg">
+                <img  class="Hover_Add_Like" src="./assets/icons/heart-plus.svg">
+                <img  id="idLikedHeart(${i})" class="Liked hide" src="./assets/icons/heart-checked.svg">
+                <img  class="Hover_Remove_Like" src="./assets/icons/heart-minus.svg">
+            </button>
     `
 }
 
