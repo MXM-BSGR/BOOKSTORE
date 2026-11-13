@@ -1,9 +1,10 @@
 // ==============================================================
 // TEMPLATE FUNCTIONS
 // ==============================================================
+const html = (strings, ...values) => String.raw({ raw: strings }, ...values);
 
 function bookCardTemplate(i, bookName, price) {
-    return `
+    return html`
                 <article id="idBook${i}" class="Book">
                 <header id="idHeaderBook${i}" class="HeaderBook">
                     <h2 id="idTitleOfBook${i}" class="TitleOfBook">${bookName}</h2>
@@ -36,13 +37,13 @@ function bookCardTemplate(i, bookName, price) {
 }
 
 function getCommentsTemplate(i, userName, comment) {
-    return `
+    return html`
     <li id="idComment${i}" class="Comment">${userName}:<br>
     ${comment}</li>
     `
 }
 function getLikesAreaWrapperTemplate(i, likesCount) {
-    return `
+    return html`
             <p id="idLikesCounterBook${i}" class="LikesCounter">${likesCount}</p>
             <button id="idLikeButtonForBook${i}" class="LikeButtonForBook" onclick="updateLikes(${i}), renderLikes(${i}), changeLikeButton(${i})" data-status="unliked">
                 <img id="idUnlikedHeart(${i})"  class="Like" src="./assets/icons/like.svg">
