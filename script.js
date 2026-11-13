@@ -43,11 +43,12 @@ function renderBooks() {
 
 
 function renderComments(i) {
-    let comments0fBook = document.getElementById(`idCommentsBook${i}`);
+    let commentsOfBook = document.getElementById(`idCommentsBook${i}`);
+    commentsOfBook.innerHTML = "";
     for (let c = 0; c < books[i].comments.length; c++) {
         let userName = books[i].comments[c].name;
         let comment = books[i].comments[c].comment;
-        comments0fBook.innerHTML += getCommentsTemplate(i, userName, comment);
+        commentsOfBook.innerHTML += getCommentsTemplate(i, userName, comment);
     }
 
 
@@ -132,6 +133,31 @@ function changeLikeButton(i) {
     }
 }
 
+
+function addComment(i) {
+    const USERNAME_INPUT_REF = document.getElementById(`idUserNameInputfield${i}`);
+    const COMMENT_INPUT_REF = document.getElementById(`idCommentInputfield${i}`);
+    let userName = USERNAME_INPUT_REF.value;
+    let comment = COMMENT_INPUT_REF.value;
+
+    if (userName != "" && comment != "") {
+        let newComment = { "name": userName, "comment": comment };
+        books[i].comments.unshift(newComment);
+        renderComments(i);
+        resetInputFields(USERNAME_INPUT_REF, COMMENT_INPUT_REF);
+    } else {
+        USERNAME_INPUT_REF.placeholder = "pls type in your Name";
+        COMMENT_INPUT_REF.placeholder = "pls enter a comment";
+    }
+
+}
+
+function resetInputFields(USERNAME_INPUT_REF, COMMENT_INPUT_REF) {
+    USERNAME_INPUT_REF.value = "";
+    COMMENT_INPUT_REF.value = "";
+    USERNAME_INPUT_REF.placeholder = "type in your Name";
+    COMMENT_INPUT_REF.placeholder = "write a comment";
+}
 
 /* #endregion */
 /* ------------------------------------------------------------- */

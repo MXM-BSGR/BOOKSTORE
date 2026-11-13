@@ -20,13 +20,13 @@ function bookCardTemplate(i, bookName, price) {
                     <form id="idCommentInputArea" class="CommentInputArea">
                         <div id="idInputfieldWrapper" class="InputfieldWrapper"> <label for="idUserNameInputfield">
                                 Username</label>
-                            <input id="idUserNameInputfield" class="UserNameInputfield" type="text"
+                            <input id="idUserNameInputfield${i}" class="UserNameInputfield" type="text"
                                 placeholder="type in your Name">
                             <label for="idCommentInputfield">Comment</label>
-                            <input id="idCommentInputfield" class="CommentInputfield" type="text"
+                            <input id="idCommentInputfield${i}" class="CommentInputfield" type="text"
                                 placeholder="write a comment">
                         </div>
-                        <button id="idAddCommentButton" class="AddCommentButton" type="button">ADD</button>
+                        <button id="idAddCommentButton" class="AddCommentButton" type="button" onclick="addComment(${i})">ADD</button>
                     </form>
                     <ul id="idCommentsBook${i}" class="Comments">
                     </ul>
