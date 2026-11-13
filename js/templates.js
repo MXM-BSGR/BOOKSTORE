@@ -20,7 +20,7 @@ function bookCardTemplate(i, bookName, likesCount, price) {
                 <figure id="idBookCover" class="CoverArea">
                     <img id="idBookCover${i + 1}" class="BookCover" src="./assets/icons/book.svg">
                 </figure>
-                <p id="idPriceBook${i + 1}" class="Price">${price}</p>
+                <p id="idPriceBook${i + 1}" class="Price">${price} €</p>
                 <section id="idCommentsWrapper" class="CommentsWrapper">
                     <p>Kommentare:</p>
                     <form id="idCommentInputArea" class="CommentInputArea">
@@ -34,14 +34,17 @@ function bookCardTemplate(i, bookName, likesCount, price) {
                         </div>
                         <button id="idAddCommentButton" class="AddCommentButton" type="button">ADD</button>
                     </form>
-                    <ul id="idCommentsBook1" class="Comments">
-                        <li id="idComment1" class="Comment">User:<br>kommentar</li>
-                        <li id="idComment2" class="Comment">User:<br>kommentar</li>
-                        <li id="idComment3" class="Comment">User:<br>kommentar</li>
-
+                    <ul id="idCommentsBook${i + 1}" class="Comments">
                     </ul>
                 </section>
             </article>
+    `
+}
+
+function getCommentsTemplate(i, userName, comment) {
+    return `
+    <li id="idComment${i + 1}" class="Comment">${userName}:<br>
+    ${comment}</li>
     `
 }
 

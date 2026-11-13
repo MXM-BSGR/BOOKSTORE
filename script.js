@@ -35,7 +35,21 @@ function renderBooks() {
         let likesCount = getLikesCount(i);
         let price = getPrice(i);
         BOOKS_WRAPPER_REF.innerHTML += bookCardTemplate(i, bookName, likesCount, price);
+        renderComments(i);
     }
+
+}
+
+
+function renderComments(i) {
+    let comments0fBook = document.getElementById(`idCommentsBook${i + 1}`);
+    for (let c = 0; c < books[i].comments.length; c++) {
+        let userName = books[i].comments[c].name;
+        let comment = books[i].comments[c].comment;
+        comments0fBook.innerHTML += getCommentsTemplate(i, userName, comment);
+    }
+
+
 }
 
 // function getInfo(i) {
