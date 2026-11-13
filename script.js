@@ -70,7 +70,8 @@ function getLikesCount(i) {
 }
 function getPrice(i) {
     let price = books[i].price;
-    return price;
+    let renderPrice = price.toFixed(2);
+    return renderPrice;
 }
 
 
