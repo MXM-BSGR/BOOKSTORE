@@ -88,11 +88,13 @@
     .hide {
         all: unset;
         display: none;
+
     }
 
     .show {
         all: unset;
         display: block;
+
     }
 
     .Like {
@@ -101,31 +103,20 @@
 
     }
 
-    /* .Like:hover {
-        display: none;
-    } */
 
     .Hover_Add_Like {
         cursor: pointer;
-        display: none;
 
     }
 
-    .Hover_Add_Like:hover {
-        cursor: pointer;
-        display: flex;
-
-    }
 
     .Liked {
         cursor: pointer;
-
 
     }
 
     .Hover_Remove_Like {
         cursor: pointer;
-        display: none;
 
     }
 
