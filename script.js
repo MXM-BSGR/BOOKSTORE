@@ -101,26 +101,46 @@ function renderLikes(i) {
 }
 
 function hideUnlikedButton(i) {
-    const BUTTON_REF = document.getElementById(`idUnlikedHeart(${i})`);
+    const UNLIKE_BUTTON_REF = document.getElementById(`idUnlikedHeart(${i})`);
 
-    BUTTON_REF.classList.remove("Like");
-    BUTTON_REF.classList.add("hide");
+    UNLIKE_BUTTON_REF.classList.remove("Like");
+    UNLIKE_BUTTON_REF.classList.add("hide");
 }
 function hideLikedButton(i) {
-    const BUTTON_REF = document.getElementById(`idLikedHeart(${i})`);
+    const LIKE_BUTTON_REF = document.getElementById(`idLikedHeart(${i})`);
 
-    BUTTON_REF.classList.remove("show");
-    BUTTON_REF.classList.add("hide");
+    // LIKE_BUTTON_REF.classList.remove("show");
+    LIKE_BUTTON_REF.classList.add("hide");
+    // hideLikedButton(i)
 }
 function showLikedButton(i) {
-    const BUTTON_REF = document.getElementById(`idLikedHeart(${i})`);
-    BUTTON_REF.classList.remove("hide");
-    BUTTON_REF.classList.add("show");
+    const LIKE_BUTTON_REF = document.getElementById(`idLikedHeart(${i})`);
+    LIKE_BUTTON_REF.classList.remove("hide");
+    LIKE_BUTTON_REF.classList.add("show");
 }
 function showUnlikedButton(i) {
-    const BUTTON_REF = document.getElementById(`idUnlikedHeart(${i})`);
-    BUTTON_REF.classList.remove("hide");
-    BUTTON_REF.classList.add("show");
+    const UNLIKE_BUTTON_REF = document.getElementById(`idUnlikedHeart(${i})`);
+    if (books[i].liked === false) {
+        // UNLIKE_BUTTON_REF.classList.remove("hide");
+        UNLIKE_BUTTON_REF.classList.add("show");
+    }
+}
+function hideHeartWithPlus(i) {
+    const BUTTON_HOVER_REF = document.getElementById(`idHeartWithPlus(${i})`);
+    BUTTON_HOVER_REF.classList.remove("show");
+    BUTTON_HOVER_REF.classList.add("hide");
+    showUnlikedButton(i);
+}
+function hideHeartWithMinus(i) {
+    const LIKED_BUTTON_HOVER_REF = document.getElementById(`idHeartWithMinus(${i})`);
+    const LIKE_BUTTON_REF = document.getElementById(`idLikedHeart(${i})`);
+    if (LIKED_BUTTON_HOVER_REF.classList.contains("show")) {
+        LIKED_BUTTON_HOVER_REF.classList.remove("show");
+        LIKED_BUTTON_HOVER_REF.classList.add("hide");
+        LIKE_BUTTON_REF.classList.remove("hide");
+        LIKE_BUTTON_REF.classList.add("show");
+    }
+    // showUnlikedButton(i);
 }
 
 function changeLikeButton(i) {
@@ -131,6 +151,36 @@ function changeLikeButton(i) {
     } else {
         hideLikedButton(i);
         showUnlikedButton(i);
+    }
+}
+
+function hoverUnlikedIcon(i) {
+    const BUTTON_HOVER_REF = document.getElementById(`idHeartWithPlus(${i})`);
+    const UNLIKE_BUTTON_REF = document.getElementById(`idUnlikedHeart(${i})`);
+    if (books[i].liked === false && BUTTON_HOVER_REF.classList.contains("hide")) {
+
+        UNLIKE_BUTTON_REF.classList.remove("Like");
+        UNLIKE_BUTTON_REF.classList.remove("show");
+        UNLIKE_BUTTON_REF.classList.add("hide");
+        BUTTON_HOVER_REF.classList.remove("hide");
+        BUTTON_HOVER_REF.classList.add("show");
+        // BUTTON_HOVER_REF
+    }
+}
+function hoverLikedIcon(i) {
+    const LIKED_BUTTON_REF = document.getElementById(`idLikedHeart(${i})`);
+    const LIKED_BUTTON_HOVER_REF = document.getElementById(`idHeartWithMinus(${i})`);
+
+    const BUTTON_HOVER_REF = document.getElementById(`idHeartWithPlus(${i})`);
+    const UNLIKE_BUTTON_REF = document.getElementById(`idUnlikedHeart(${i})`);
+    if (books[i].liked === true && LIKED_BUTTON_HOVER_REF.classList.contains("hide")) {
+
+        // LIKE_BUTTON_REF.classList.remove("Like");
+        LIKED_BUTTON_REF.classList.remove("show");
+        LIKED_BUTTON_REF.classList.add("hide");
+        LIKED_BUTTON_HOVER_REF.classList.remove("hide");
+        LIKED_BUTTON_HOVER_REF.classList.add("show");
+        // BUTTON_HOVER_REF
     }
 }
 
@@ -159,6 +209,11 @@ function resetInputFields(USERNAME_INPUT_REF, COMMENT_INPUT_REF) {
     USERNAME_INPUT_REF.placeholder = "type in your Name";
     COMMENT_INPUT_REF.placeholder = "write a comment";
 }
+
+
+// function likeButtonChanger() {
+// for later clean code
+// }
 
 /* #endregion */
 /* ------------------------------------------------------------- */
