@@ -36,6 +36,7 @@ function renderBooks() {
         let price = getPrice(i);
         BOOKS_WRAPPER_REF.innerHTML += bookCardTemplate(i, bookName, price);
         renderLikes(i);
+        changeLikeButton(i);
         renderComments(i);
     }
 
