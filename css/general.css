@@ -5,9 +5,7 @@
     * {
         margin: 0;
         box-sizing: border-box;
-
     }
-
 
     html {
         color: rgb(255, 238, 206);
@@ -15,24 +13,27 @@
         min-height: 100%;
     }
 
+    body {
+        width: 100vw;
+        background-color: rgb(17, 17, 17);
+        display: flex;
+        justify-content: center;
+    }
 
-    /* #region     */
-
-
-
-    /* #endregion */
-    /* ------------------------------------------------------------- */
-
-
-
-
-
+    main {
+        display: flex;
+        justify-content: center;
+        width: 50%;
+        height: 100%;
+        min-height: 100dvh;
+        background-color: rgba(255, 255, 255, 0.2);
+        margin-block: 120px;
+    }
 
     /* ============================================================== */
 
-    /* #region     */
 
-
+    /* #region BLANCO */
 
     /* #endregion */
     /* ------------------------------------------------------------- */

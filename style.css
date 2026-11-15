@@ -1,41 +1,13 @@
     /* ============================================================== */
-
     /* STYLE */
-
     /* ============================================================== */
-    body {
-        width: 100vw;
-
-        /* background-color: rgb(70, 52, 87); */
-        background-color: rgb(17, 17, 17);
-        display: flex;
-        justify-content: center;
-
-    }
-
-    /* ------------------------------------------------------------- */
 
     /* #region   HEADER  */
 
     /* #endregion */
-
     /* ------------------------------------------------------------- */
 
     /* #region   MAIN  */
-
-    main {
-        display: flex;
-        justify-content: center;
-        width: 50%;
-        height: 100%;
-        min-height: 100dvh;
-        /* flex: 1; */
-        /* background-color: plum; */
-        background-color: rgba(255, 255, 255, 0.2);
-        margin-block: 120px;
-
-    }
-
     .BooksWrapper {
         display: flex;
         flex-direction: column;
@@ -45,11 +17,8 @@
         width: 100%;
         margin: 30px;
         padding: 20px;
-        /* background-color: purple; */
         background-color: rgba(255, 255, 255, 0.2);
-
     }
-
 
     .Book {
         display: flex;
@@ -58,11 +27,9 @@
         align-items: flex-start;
         width: 75%;
         height: fit-content;
-        /* background-color: rgb(143, 217, 247); */
         background-color: rgba(255, 255, 255, 0.2);
         padding: 20px;
         gap: 15px;
-
     }
 
     .HeaderBook {
@@ -82,44 +49,26 @@
 
     .LikeButtonForBook {
         all: unset;
-
+        cursor: pointer;
     }
 
     .hide {
         all: unset;
         display: none;
-
     }
 
     .show {
         all: unset;
         display: block;
-
     }
 
-    .Like {
-        all: unset;
-        cursor: pointer;
+    .Like {}
 
-    }
+    .Hover_Add_Like {}
 
+    .Liked {}
 
-    .Hover_Add_Like {
-        cursor: pointer;
-
-    }
-
-
-    .Liked {
-        cursor: pointer;
-
-    }
-
-    .Hover_Remove_Like {
-        cursor: pointer;
-
-    }
-
+    .Hover_Remove_Like {}
 
     .CoverArea {
         display: flex;
@@ -133,14 +82,12 @@
 
     .BookCover {
         width: 70%;
-        /* aspect-ratio: 1/1; */
     }
 
     .Price {
         width: 100%;
         text-align: end;
         border-bottom: 1px solid black;
-
     }
 
     .CommentsWrapper {
@@ -156,7 +103,6 @@
         align-items: flex-end;
         max-width: 100%;
         padding: 5px 0;
-
     }
 
     .InputfieldWrapper {
@@ -181,22 +127,18 @@
 
 
     /* #endregion */
-
     /* ------------------------------------------------------------- */
-
 
     /* #region   FOOTER  */
 
     /* #endregion */
-
     /* ------------------------------------------------------------- */
 
     /* ============================================================== */
 
 
 
-    /* #region     */
+    /* #region  BLANCO  */
 
     /* #endregion */
-
     /* ------------------------------------------------------------- */
