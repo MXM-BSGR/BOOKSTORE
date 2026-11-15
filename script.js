@@ -1,27 +1,23 @@
-/* ============================================================== */
-/* SCRIPT*/
-/* ============================================================== */
+// ==============================================================
+// SCRIPT*/
+// ==============================================================
 
 
-
-/* #region   CONST  */
+// #region   CONST
 const BOOKS_WRAPPER_REF = document.getElementById("idMainContent");
 
-/* #endregion */
-/* ------------------------------------------------------------- */
-/* ============================================================== */
+// #endregion
+// -------------------------------------------------------------
+// ==============================================================
 
-/* #region   VARIABLES  */
+//#region   VARIABLES
 
+// #endregion
+// -------------------------------------------------------------
+// ==============================================================
 
+// #region   FUNCTIONS
 
-/* #endregion */
-/* ------------------------------------------------------------- */
-/* ============================================================== */
-
-/* #region   FUNCTIONS  */
-
-/* #region   GENERAL FUNCTIONS  */
 function init() {
     renderBooks();
 }
@@ -43,12 +39,10 @@ function renderBooks() {
 function renderComments(i) {
     let commentsOfBook = document.getElementById(`idCommentsBook${i}`);
     commentsOfBook.innerHTML = "";
-
     if (books[i].comments.length !== 0) {
         if (commentsOfBook.classList.contains("hide")) {
             commentsOfBook.classList.toggle("hide");
             commentsOfBook.classList.toggle("CommentsArea");
-
         }
         for (let c = 0; c < books[i].comments.length; c++) {
             let userName = books[i].comments[c].name;
@@ -59,8 +53,6 @@ function renderComments(i) {
     else {
         hideComments(commentsOfBook);
     }
-
-
 }
 
 
@@ -69,13 +61,6 @@ function hideComments(commentsOfBook) {
     commentsOfBook.classList.toggle("hide");
 }
 
-// function getInfo(i) {
-//     let title = getTitle(i);
-//     let likesCount = getLikesCount(i);
-//     let price = getPrice(i);
-
-//     return title, likesCount, price;
-// }
 
 function getTitle(i) {
     let bookName = books[i].name;
@@ -117,16 +102,13 @@ function renderLikes(i) {
 
 function hideUnlikedButton(i) {
     const UNLIKE_BUTTON_REF = document.getElementById(`idUnlikedHeart(${i})`);
-    UNLIKE_BUTTON_REF.classList.remove("Like");
     UNLIKE_BUTTON_REF.classList.add("hide");
 }
 
 
 function hideLikedButton(i) {
     const LIKE_BUTTON_REF = document.getElementById(`idLikedHeart(${i})`);
-    // LIKE_BUTTON_REF.classList.remove("show");
     LIKE_BUTTON_REF.classList.add("hide");
-    // hideLikedButton(i)
 }
 
 
@@ -140,7 +122,6 @@ function showLikedButton(i) {
 function showUnlikedButton(i) {
     const UNLIKE_BUTTON_REF = document.getElementById(`idUnlikedHeart(${i})`);
     if (books[i].liked === false) {
-        // UNLIKE_BUTTON_REF.classList.remove("hide");
         UNLIKE_BUTTON_REF.classList.add("show");
     }
 }
@@ -193,15 +174,11 @@ function hoverUnlikedIcon(i) {
 function hoverLikedIcon(i) {
     const LIKED_BUTTON_REF = document.getElementById(`idLikedHeart(${i})`);
     const LIKED_BUTTON_HOVER_REF = document.getElementById(`idHeartWithMinus(${i})`);
-    const BUTTON_HOVER_REF = document.getElementById(`idHeartWithPlus(${i})`);
-    const UNLIKE_BUTTON_REF = document.getElementById(`idUnlikedHeart(${i})`);
     if (books[i].liked === true && LIKED_BUTTON_HOVER_REF.classList.contains("hide")) {
-        // LIKE_BUTTON_REF.classList.remove("Like");
         LIKED_BUTTON_REF.classList.remove("show");
         LIKED_BUTTON_REF.classList.add("hide");
         LIKED_BUTTON_HOVER_REF.classList.remove("hide");
         LIKED_BUTTON_HOVER_REF.classList.add("show");
-        // BUTTON_HOVER_REF
     }
 }
 
@@ -211,7 +188,6 @@ function addComment(i) {
     const COMMENT_INPUT_REF = document.getElementById(`idCommentInputfield${i}`);
     let userName = USERNAME_INPUT_REF.value;
     let comment = COMMENT_INPUT_REF.value;
-
     if (userName != "" && comment != "") {
         let newComment = { "name": userName, "comment": comment };
         books[i].comments.unshift(newComment);
@@ -233,29 +209,12 @@ function resetInputFields(USERNAME_INPUT_REF, COMMENT_INPUT_REF) {
 }
 
 
-// function likeButtonChanger() {
-// for later clean code
-// }
+// #endregion
+// -------------------------------------------------------------
 
-/* #endregion */
-/* ------------------------------------------------------------- */
+// ==============================================================
 
+// #region BLANCO
 
-
-/* #endregion */
-/* ------------------------------------------------------------- */
-
-/* ============================================================== */
-
-
-
-
-
-
-
-// /* #region  */
-
-
-
-/* #endregion */
-/* ------------------------------------------------------------- */
+// #endregion
+// -------------------------------------------------------------

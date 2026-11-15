@@ -1,0 +1,83 @@
+    /* ============================================================== */
+    /* MEDIA QUERRIES */
+    /* ============================================================== */
+
+    @media screen and (width <=1024px) {
+        .MainContent {
+            width: 75%;
+        }
+    }
+
+    @media screen and (width <=767px) {
+        .BookCover {
+            width: 66%;
+        }
+
+        .AddCommentButton {
+            position: absolute;
+            top: 19px;
+            right: 0;
+        }
+    }
+
+    @media screen and (width <=480px) {
+        .MainContent {
+            width: 100%;
+        }
+
+        .HeaderBook {
+            flex-direction: column;
+            gap: 10px;
+            font-size: clamp(1.125rem, calc(1.018rem + 0.54vw), 1.5rem)
+        }
+
+        .LikesAreaWrapper {
+            justify-content: center;
+            width: 100%;
+        }
+
+        .LikesCounter {
+            font-size: 0.75rem;
+        }
+
+
+        .CommentsWrapper {
+            padding: 10px;
+        }
+
+
+        .CommentInputArea {
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .UserNameInputfield {
+            min-width: 120px;
+        }
+
+        .CommentInputfield {
+            width: 100%;
+        }
+
+        .AddCommentButton {
+            padding-inline: 0;
+            width: 20%;
+            height: 24px;
+        }
+
+
+        .Comment {
+            font-size: 0.75rem;
+        }
+
+    }
+
+    /* ============================================================== */
+
+
+    /* #region BLANCO */
+
+    /* #endregion */
+    /* ------------------------------------------------------------- */
