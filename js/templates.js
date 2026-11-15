@@ -9,6 +9,7 @@ const html = (strings, ...values) => String.raw({ raw: strings }, ...values);
 
 function bookCardTemplate(i, bookName, price) {
     return html`
+            <section id="idBooksWrapper${i}" class="BooksWrapper">
                 <article id="idBook${i}" class="Book">
                     <header id="idHeaderBook${i}" class="HeaderBook">
                         <h2 id="idTitleOfBook${i}" class="TitleOfBook">
@@ -42,10 +43,11 @@ function bookCardTemplate(i, bookName, price) {
                                 ADD
                             </button>
                         </form>
-                        <ul id="idCommentsBook${i}" class="Comments">
+                        <ul id="idCommentsBook${i}" class="CommentsArea">
                         </ul>
                     </section>
                 </article>
+            </section>
     `
 }
 
