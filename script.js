@@ -5,7 +5,7 @@
 
 
 /* #region   CONST  */
-const BOOKS_WRAPPER_REF = document.getElementById("idBooksWrapper");
+const BOOKS_WRAPPER_REF = document.getElementById("idMainContent");
 
 /* #endregion */
 /* ------------------------------------------------------------- */
@@ -43,11 +43,30 @@ function renderBooks() {
 function renderComments(i) {
     let commentsOfBook = document.getElementById(`idCommentsBook${i}`);
     commentsOfBook.innerHTML = "";
-    for (let c = 0; c < books[i].comments.length; c++) {
-        let userName = books[i].comments[c].name;
-        let comment = books[i].comments[c].comment;
-        commentsOfBook.innerHTML += getCommentsTemplate(i, userName, comment);
+
+    if (books[i].comments.length !== 0) {
+        if (commentsOfBook.classList.contains("hide")) {
+            commentsOfBook.classList.toggle("hide");
+            commentsOfBook.classList.toggle("CommentsArea");
+
+        }
+        for (let c = 0; c < books[i].comments.length; c++) {
+            let userName = books[i].comments[c].name;
+            let comment = books[i].comments[c].comment;
+            commentsOfBook.innerHTML += getCommentsTemplate(i, userName, comment);
+        }
     }
+    else {
+        hideComments(commentsOfBook);
+    }
+
+
+}
+
+
+function hideComments(commentsOfBook) {
+    commentsOfBook.classList.toggle("CommentsArea");
+    commentsOfBook.classList.toggle("hide");
 }
 
 // function getInfo(i) {
