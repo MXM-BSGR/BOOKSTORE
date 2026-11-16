@@ -2,27 +2,43 @@
     /* MEDIA QUERRIES */
     /* ============================================================== */
 
-    @media screen and (width <=1024px) {
+    @media screen and (width >=1441px) {
         .MainContent {
-            width: 75%;
+            width: 100%;
+            max-width: 1440px;
         }
     }
 
-    @media screen and (width <=767px) {
-        .BookCover {
-            width: 66%;
+    @media screen and (width >=481px) and (width <=1024px) {
+        .MainContent {
+            padding-inline: clamp(10px, calc(-20.0px + 3.91vw), 20px);
         }
 
-        .AddCommentButton {
-            position: absolute;
-            top: 19px;
-            right: 0;
+        .BooksWrapper {
+            min-width: 400px;
         }
+    }
+
+    @media screen and (width <=745px) {
+        .BooksWrapper {
+            margin: 10px;
+        }
+
     }
 
     @media screen and (width <=480px) {
         .MainContent {
-            width: 100%;
+            padding-inline: 20px;
+        }
+
+        .BooksWrapper {
+            margin: 10px 0;
+            width: 90%;
+            min-width: unset;
+        }
+
+        .BookCover {
+            width: 70%;
         }
 
         .HeaderBook {
@@ -40,16 +56,11 @@
             padding: 10px;
         }
 
-
         .CommentInputArea {
             flex-direction: column;
             gap: 12px;
             align-items: center;
             justify-content: flex-start;
-        }
-
-        .UserNameInputfield {
-            min-width: 120px;
         }
 
         .CommentInputfield {
@@ -58,10 +69,30 @@
 
         .AddCommentButton {
             padding-inline: 0;
-            width: 20%;
             height: 24px;
         }
 
+    }
+
+    @media screen and (width <=375px) {
+        .CommentsWrapper {
+            position: relative;
+        }
+
+        .CommentInputArea {
+            position: static;
+        }
+
+        .AddCommentButton {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 40px;
+        }
+
+        .UserNameInputfield {
+            width: 100%;
+        }
     }
 
     /* ============================================================== */
