@@ -64,7 +64,8 @@
     .TitleOfBook {
         text-decoration: underline;
         color: rgb(43 29 11);
-        font-size: clamp(1.125rem, calc(1.018rem + 0.54vw), 1.5rem);
+        font-size: 1.5rem;
+        height: 60px;
     }
 
     .LikesAreaWrapper {
@@ -171,7 +172,7 @@
 
     .AddCommentButton {
         position: absolute;
-        top: 23px;
+        top: 29px;
         right: 0;
         width: 50px;
         height: 24px;

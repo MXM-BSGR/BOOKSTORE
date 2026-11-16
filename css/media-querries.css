@@ -9,21 +9,64 @@
         }
     }
 
-    @media screen and (width >=481px) and (width <=1024px) {
+    @media screen and (width >=481px) and (width <=900px) {
         .MainContent {
             padding-inline: clamp(10px, calc(-20.0px + 3.91vw), 20px);
         }
 
         .BooksWrapper {
-            min-width: 400px;
+            width: 45%;
+        }
+
+        .TitleOfBook {
+            height: 60px;
+            font-size: 1.25rem;
+        }
+
+        .BookCover {
+            width: 70%;
+        }
+
+        h3 {
+            font-size: 1rem;
         }
     }
 
     @media screen and (width <=745px) {
         .BooksWrapper {
             margin: 10px;
+            min-width: 300px;
         }
 
+        .TitleOfBook {
+            display: none;
+        }
+
+        .HeaderBook {
+            flex-direction: row;
+            gap: 10px;
+            font-size: clamp(1.125rem, calc(1.018rem + 0.54vw), 1.5rem)
+        }
+
+        .LikesAreaWrapper {
+            flex-direction: row;
+            gap: 10px;
+            justify-content: flex-end;
+            width: 100%;
+        }
+
+        .BookCover {
+            width: 200px;
+        }
+
+    }
+
+    @media screen and (width >=481px) and (width <=680px) {
+
+        .BooksWrapper {
+            margin: 10px;
+            min-width: 400px;
+        }
     }
 
     @media screen and (width <=480px) {
@@ -37,6 +80,10 @@
             min-width: unset;
         }
 
+        .TitleOfBook {
+            display: none;
+        }
+
         .BookCover {
             width: 70%;
         }
@@ -48,7 +95,9 @@
         }
 
         .LikesAreaWrapper {
-            justify-content: center;
+            flex-direction: row;
+            gap: 10px;
+            justify-content: flex-end;
             width: 100%;
         }
 
@@ -75,6 +124,11 @@
     }
 
     @media screen and (width <=375px) {
+
+        .MainContent {
+            padding-inline: 10px;
+        }
+
         .CommentsWrapper {
             position: relative;
         }
