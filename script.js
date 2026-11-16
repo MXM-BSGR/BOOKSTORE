@@ -10,14 +10,8 @@ const BOOKS_WRAPPER_REF = document.getElementById("idMainContent");
 // -------------------------------------------------------------
 // ==============================================================
 
-//#region   VARIABLES
-
-// #endregion
-// -------------------------------------------------------------
-// ==============================================================
 
 // #region   FUNCTIONS
-
 function init() {
     renderBooks();
 }
@@ -157,6 +151,7 @@ function changeLikeButton(i) {
         showUnlikedButton(i);
     }
 }
+
 
 function hoverUnlikedIcon(i) {
     const BUTTON_HOVER_REF = document.getElementById(`idHeartWithPlus(${i})`);
