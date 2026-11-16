@@ -72,7 +72,6 @@
 
     .LikesCounter {
         color: #a8a8a8;
-        font-size: 0.75rem;
     }
 
     .LikeButtonForBook {
@@ -148,7 +147,6 @@
 
     label {
         color: rgb(0 0 0 / 60%);
-        font-size: 0.75rem;
     }
 
     .UserNameInputfield {
